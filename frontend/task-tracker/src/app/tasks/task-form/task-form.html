@@ -1,0 +1,51 @@
+<h2>{{ taskId ? 'Rediģēt uzdevumu' : 'Jauns uzdevums' }}</h2>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+
+  <div>
+    <label>
+      Nosaukums
+      <input type="text" formControlName="title" />
+    </label>
+  </div>
+
+  <div>
+    <label>
+      Apraksts
+      <textarea formControlName="description"></textarea>
+    </label>
+  </div>
+
+  <div>
+    <label>
+      Prioritāte
+      <select formControlName="priority">
+        <option value="Low">Zema</option>
+        <option value="Medium">Vidēja</option>
+        <option value="High">Augsta</option>
+    </select>
+    </label>
+  </div>
+
+  <div>
+    <label>
+      Termiņš
+      <input type="date" formControlName="dueDate" />
+    </label>
+  </div>
+
+  <div>
+    <label>
+      <input type="checkbox" formControlName="isDone" />
+      Vai pabeigts?
+    </label>
+  </div>
+
+  <button type="submit" [disabled]="form.invalid">
+    {{ taskId ? 'Saglabāt izmaiņas' : 'Izveidot' }}
+  </button>
+
+  <button type="button" (click)="cancel()">
+    Atcelt
+  </button>
+</form>

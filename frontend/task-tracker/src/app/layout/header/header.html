@@ -1,0 +1,17 @@
+<header style="display: flex; gap: 16px; align-items: center;">
+  <h1 style="margin-right: auto;">Uzdevumu saraksts</h1>
+
+  <!-- Logged out -->
+  <ng-container *ngIf="auth.currentUser$ | async ; else loggedOut">
+    <span>Sveiki, {{ auth.currentUser$.value }}</span>
+    <button (click)="logout()">Izlogoties</button>
+  </ng-container>
+
+  <!-- Logged out template -->
+  <ng-template #loggedOut>
+    <a routerLink="/login">Ielogoties</a>
+    <a routerLink="/register">Reģistrēties</a>
+  </ng-template>
+</header>
+
+<hr />

@@ -1,0 +1,51 @@
+# =====================
+# OS / Editor
+# =====================
+.DS_Store
+Thumbs.db
+*.swp
+*.user
+*.suo
+*.log
+
+# =====================
+# .NET
+# =====================
+bin/
+obj/
+*.dll
+*.pdb
+*.cache
+
+# Rider / VS / VS Code
+.vs/
+.idea/
+.vscode/
+
+# =====================
+# Angular / Node
+# =====================
+node_modules/
+dist/
+.angular/
+npm-debug.log*
+yarn-error.log*
+
+# =====================
+# Build outputs
+# =====================
+backend/**/bin/
+backend/**/obj/
+frontend/dist/
+
+# =====================
+# Docker
+# =====================
+**/docker-compose.override.yml
+*.env
+
+# =====================
+# Test results
+# =====================
+TestResults/
+coverage/

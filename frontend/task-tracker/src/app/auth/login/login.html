@@ -1,0 +1,9 @@
+<h2>Ielogoties</h2>
+
+<form (ngSubmit)="submit()">
+  <input [(ngModel)]="username" name="username" placeholder="lietotājvārds" />
+  <input [(ngModel)]="password" name="password" type="password" placeholder="parole" />
+  <button type="submit">Ielogoties</button>
+</form>
+
+<p *ngIf="error" style="color: red;">{{ error }}</p>
