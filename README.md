@@ -129,3 +129,25 @@ ng serve
 ```
 
 The app will start on `http://localhost:4200`
+
+
+### Run inside Docker
+
+Build Docker file
+
+```bash
+docker build -t tasktracker .
+```
+
+Run the dockerfile and provide both connection strings as environment variables
+
+```bash
+docker run -d \
+	--name tasktracker-app \
+	-p 8080:8080 \
+	-e ConnectionStrings__TaskTrackerDatabase="(use your connection string to TaskTracking database)" \
+	-e ConnectionStrings__TaskTrackerIdentityDatabase="(use your connection string to Identity database)" \
+	tasktracker:latest
+```
+
+
